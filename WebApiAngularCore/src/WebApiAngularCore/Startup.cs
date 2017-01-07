@@ -39,6 +39,7 @@ namespace WebApiAngularCore
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddScoped<Database>();
+            services.AddScoped<IReferenceRepository, ReferenceRepository>();
             services.AddMvc();
 
             CorsPolicy policy = new CorsPolicy();
