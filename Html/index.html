@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<title>Angular & AspNet Web Api Core</title>
+	<link href="css/bootstrap.css" rel="stylesheet" />  
+	<link href="css/bootstrap-theme.css" rel="stylesheet" />  
+</head>
+<body>
+	<div ng-controller="ctrl" class="container container-fluid">
+		<h1>Angular e WebApi Core</h1>
+		<br /><br />
+		<div class="row">
+			<div class="col-xs-12">
+				<form class="form-inline well" style="width:100%" role="form">			
+			  		<div class="form-group col-sm-10">
+			    		<label for="exampleInputName2">Nome</label>
+			    		<input type="text" ng-model="value.name"  class="form-control" placeholder="Digite o nome">
+			  		</div>		  		  	
+				  <button type="button" class="btn btn-default" ng-click="add(value);">Inserir</button>
+				</form>	
+			</div>
+		</div>
+		<br /><br />	
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th style="width:15%;text-align:center">Id</th>
+					<th>Nome</th>
+					<th style="width:15%;text-align:center">...</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in items">
+					<td style="text-align:right">{{item.id}}</td>
+					<td>
+						<input type="text" ng-model="item.name" class="form-control" placeholder="Digite o nome">
+					</td>
+					<td style="text-align:center"><button type="button" class="btn btn-success" ng-click="update(item);">Alterar</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
